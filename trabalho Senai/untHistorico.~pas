@@ -1,0 +1,48 @@
+unit untHistorico;
+
+interface
+
+uses
+  Windows, Messages, SysUtils, Variants, Classes, Graphics, Controls, Forms,
+  Dialogs, Menus, StdCtrls, Grids, DBGrids, jpeg, ExtCtrls, Buttons, DB,
+  ADODB;
+
+type
+  TfrmHistorico = class(TForm)
+    DBGrid1: TDBGrid;
+    edtHistorico: TEdit;
+    lblHistorico: TLabel;
+    btnHistoricoPesquisa: TBitBtn;
+    btnLimparDados: TBitBtn;
+    btnRemover: TBitBtn;
+    ADOTblHistorico: TADOTable;
+    dsHistorico: TDataSource;
+    Sair: TBitBtn;
+    grbHistorico: TGroupBox;
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  frmHistorico: TfrmHistorico;
+
+implementation
+
+uses unt_dm_principal;
+
+{$R *.dfm}
+
+procedure TfrmHistorico.FormClose(Sender: TObject;
+  var Action: TCloseAction);
+begin
+  if Messagedlg('Deseja Realmente Sair' , mtConfirmation,
+                [mbyes, mbno], 0) = mrYes then
+   // adotHistorico.Connected := False
+  else
+    Action := CaNone;
+end;
+
+end.

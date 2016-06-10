@@ -1,0 +1,65 @@
+object frmPrincipal: TfrmPrincipal
+  Left = 192
+  Top = 117
+  Width = 929
+  Height = 509
+  Caption = 'Inicio'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  Menu = meumenu
+  OldCreateOrder = False
+  WindowState = wsMaximized
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object StatusBar1: TStatusBar
+    Left = 0
+    Top = 432
+    Width = 913
+    Height = 19
+    Panels = <
+      item
+        Bevel = pbNone
+        Width = 300
+      end
+      item
+        Bevel = pbNone
+        Width = 100
+      end
+      item
+        Alignment = taCenter
+        Bevel = pbNone
+        Width = 425
+      end
+      item
+        Alignment = taRightJustify
+        Bevel = pbNone
+        BiDiMode = bdRightToLeftNoAlign
+        ParentBiDiMode = False
+        Width = 25
+      end>
+  end
+  object meumenu: TMainMenu
+    Top = 8
+    object mmInicio: TMenuItem
+      Caption = 'Inicio'
+    end
+    object mmCadastro: TMenuItem
+      Caption = 'Cadastro Simulado'
+    end
+    object mmRealizar: TMenuItem
+      Caption = 'Realizar Simulado'
+    end
+    object mmAjuda: TMenuItem
+      Caption = 'Ajuda'
+    end
+    object mmSair: TMenuItem
+      Caption = 'Sair'
+      OnClick = mmSairClick
+    end
+  end
+end
